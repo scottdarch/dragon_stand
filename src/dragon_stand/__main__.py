@@ -7,7 +7,9 @@
 """
 
 import sys
+import asyncio
 
 from .cli import main
 
-sys.exit(main())
+loop = asyncio.get_event_loop()
+sys.exit(loop.run_until_complete(main()))
